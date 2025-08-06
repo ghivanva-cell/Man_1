@@ -70,3 +70,60 @@
   background-color: #d88400;
 }
 
+.letakFoto {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-image: url(../img/logo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Efek transisi halus untuk perubahan ukuran gambar dan transform */
+  transition: background-size 0.5s ease, transform 0.5s ease;
+}
+
+.letakFoto:hover {
+  background-size: 110%;
+  transform: scale(1.05); /* Membesarkan elemen secara keseluruhan */
+}
+
+#TombolNavigasi {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+#TombolNavigasi::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: orange;
+  transition: width 0.4s ease;
+}
+
+#TombolNavigasi:hover {
+  color: orange;
+}
+
+#TombolNavigasi:hover::after {
+  width: 100%;
+}
+
+.animate-up {
+  animation: gerak 2s ease-in forwards;
+}
+
+@keyframes gerak {
+  0% {
+    /* position move slightly up */
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
